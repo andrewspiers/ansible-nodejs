@@ -34,6 +34,9 @@ script:
   - node --version || true
   - npm --version || true
   - which npm
+  - /usr/bin/node --version || true
+  - /usr/bin/nodejs --version || true
+  - /usr/bin/npm --version || true
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
