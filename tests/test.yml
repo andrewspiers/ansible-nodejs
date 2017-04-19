@@ -4,3 +4,10 @@
   become: true
   roles:
     - ansible-nodejs
+
+
+- hosts: localhost
+  tasks:
+    - shell: nodejs --version | awk '{print substr($1,2,1) }'
+      register: node_major_version
+    - assert: { that: "node_major_version == {{ nodejs_version[0] }}" }
