@@ -28,9 +28,12 @@ script:
   - ansible-playbook -c local tests/test.yml -i tests/inventory
   # experimental: list packages
   - dpkg -l
+  - apt-cache policy nodejs
+  - dpkg -L nodejs
   # experimental: test version
   - node --version || true
   - npm --version || true
+  - which npm
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
