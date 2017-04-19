@@ -26,6 +26,11 @@ script:
   - ansible-playbook -c local tests/test.yml -i tests/inventory --syntax-check
   # Actually install
   - ansible-playbook -c local tests/test.yml -i tests/inventory
+  # experimental: list packages
+  - dpkg -l
+  # experimental: test version
+  - node --version || true
+  - npm --version || true
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
